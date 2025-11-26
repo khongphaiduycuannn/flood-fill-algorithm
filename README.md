@@ -1,19 +1,23 @@
-Data requirements:
+## Yêu cầu Data
 
-Cung cấp 1 file ảnh có các yêu cầu
-  - Kích thước tối đa 1024 x 1024.
-  - Thuần 2 màu đen trắng (càng ít răng cưa càng tốt).
-  - Không nên có các chi tiết quá nhỏ.
+Cung cấp 1 file ảnh có các yêu cầu sau:
 
-Ưu điểm:
+- **Kích thước tối đa:** 1024 × 1024 pixels.
+- **Chế độ màu:** Thuần 2 màu đen trắng (càng ít răng cưa càng tốt).
+- **Mức độ chi tiết:** Không nên có các chi tiết quá nhỏ.
+
+## Ưu điểm
+
 - Content dễ chuẩn bị.
 - Animation mượt.
 
-Nhược điểm:
+## Nhược điểm
+
 - Khi zoom lên ảnh sẽ bị vỡ.
 - Tô màu sẽ bị răng cưa.
 - Các chi tiết nhỏ tô không được chính xác.
 - Khó khăn trong việc xác định đã tô được bao nhiêu % ảnh.
 
-Demo:
+## Demo
+
 ![til](./demo.gif)
