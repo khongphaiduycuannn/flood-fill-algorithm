@@ -105,31 +105,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun handleTouch(touchX: Float, touchY: Float) {
-        if (isFilling) return
-
-        val matrix = binding.imageView.imageMatrix
-        val inverse = Matrix()
-
-        if (!matrix.invert(inverse)) {
-            return
-        }
-
-        val points = floatArrayOf(touchX, touchY)
-        inverse.mapPoints(points)
-
-        val bitmapX = points[0].toInt()
-        val bitmapY = points[1].toInt()
-
-        if (bitmapX < 0 || bitmapX >= bitmap.width ||
-            bitmapY < 0 || bitmapY >= bitmap.height
+        if (touchX < 0 || touchX >= bitmap.width ||
+            touchY < 0 || touchY >= bitmap.height
         ) {
             return
         }
 
-        performAnimatedFloodFill(bitmapX, bitmapY)
+        performAnimatedFloodFill(touchX.toInt(), touchY.toInt())
     }
 
     private fun performAnimatedFloodFill(x: Int, y: Int) {
+        if (isFilling) return
+
         isFilling = true
 
         val start = System.currentTimeMillis()
